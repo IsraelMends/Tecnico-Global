@@ -7,10 +7,9 @@ const Header_Nav = () => {
   const [activeItem, setActiveItem] = useState("home");
 
   const menuItems = [
-    { id: "home", label: "Home" },
-    { id: "services", label: "Services" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: "Início" },
+    { id: "about", label: "Sobre Nós" },
+    { id: "contact", label: "Contato" },
   ];
   return (
     <div className="flex items-center justify-between">

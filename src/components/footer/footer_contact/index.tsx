@@ -1,6 +1,6 @@
 const FooterContact = () => {
   return (
-    <div className="space-y-4">
+    <div id="Contact" className="space-y-4">
       <h3 className="text-lg font-semibold">Contact</h3>
       <ul className="space-y-2 text-gray-400">
         <li>tecnico@faculdade.com</li>

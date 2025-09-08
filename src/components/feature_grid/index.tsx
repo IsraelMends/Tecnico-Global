@@ -13,8 +13,8 @@ const FEATURES: Feature[] = [
 
 const FeatureGrid = () => {
   return (
-    <section id="features" aria-labelledby="features-title" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="features" aria-labelledby="features-title" className="py-16 bg-[#f3f3f3]">
+      <div className="container mx-auto px-4 justify-center">
         <h2 id="features-title" className="text-3xl font-bold mb-8 text-gray-900">
           Por que escolher a Técnico Global?
         </h2>

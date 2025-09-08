@@ -2,7 +2,7 @@ import ContactContainer from "./contact_container"
 
 const ContactCTA = () => {
   return (
-    <ContactContainer/>
+    <ContactContainer />
   );
 };
 

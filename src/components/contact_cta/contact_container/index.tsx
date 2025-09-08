@@ -4,7 +4,7 @@ import ContactUpper from "../contact_upper";
 const ContactContainer = () => {
   return (
     <section
-      id="contact"
+      id="Contact"
       aria-labelledby="contact-title"
       className="py-16 bg-gray-900"
     >

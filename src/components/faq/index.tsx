@@ -14,13 +14,13 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="faq" aria-labelledby="faq-title" className="py-16 bg-[#f3f3f3]">
+      <div className="container mx-auto px-4 ">
         <h2 id="faq-title" className="text-3xl font-bold mb-8 text-gray-900">
           Perguntas frequentes
         </h2>
 
-        <div className="divide-y divide-gray-200 border border-gray-200 rounded-2xl">
+        <div className=" bg-white divide-y divide-gray-200 border border-gray-200 rounded-2xl">
           {QA_LIST.map((item, i) => {
             const open = openIndex === i;
             return (

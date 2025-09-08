@@ -4,8 +4,6 @@ import Hero from "@/components/hero";
 import About from "@/components/about";
 import Services from "@/components/service";
 import FeatureGrid from "@/components/feature_grid";
-import Stats from "@/components/stats";
-import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq";
 import ContactCTA from "@/components/contact_cta";
 
@@ -18,9 +16,7 @@ export default function HomePage() {
       <Hero />
       <FeatureGrid />
       <About />
-      <Stats />
       <Services />
-      <Testimonials />
       <FAQ />
       <ContactCTA />
       <Footer />

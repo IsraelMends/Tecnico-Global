@@ -1,11 +1,12 @@
 import Story from "./about_story";
 import Mission from "./about_mission";
 
+
 const About = () => {
   return (
     <div className="bg-white py-16">
       <div id="About" className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-primary mb-8">
+        <h2 className="text-3xl font-bold text-center text-secondary mb-8">
           Sobre Nós
         </h2>
 

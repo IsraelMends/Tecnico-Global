@@ -8,7 +8,7 @@ const Mission = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-md shadow-primary p-6">
       <h3 className="text-2xl font-semibold text-gray-800 mb-4">Nossa Missão</h3>
       <ul className="space-y-4">
         {items.map((item, index) => (

@@ -18,11 +18,11 @@ const Header_Nav = () => {
       </div>
 
       {/* Desktop Navigation */}
-
-      <HeaderButtom />
-
+        <HeaderButtom/>
       {/* Mobile Menu Button */}
-      <Header_Mob />
+      <header className="flex md:hidden fixed top-0 left-0 w-full z-40 bg-[#241645]">
+        <Header_Mob />
+      </header>
     </div>
   );
 };

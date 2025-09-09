@@ -25,11 +25,11 @@ export function CarouselPlugin() {
       onMouseLeave={plugin.current.reset}
       opts={{
         align: "start",
-        containScroll: "trimSnaps", // evita “sobras” nas laterais
-        loop: false,                // não loopa (opcional)
-        dragFree: false,            // sem arrasto livre (mantém nos snaps)
+        containScroll: "trimSnaps", 
+        loop: false,               
+        dragFree: false,
         slidesToScroll: 1,
-        startIndex: 0,              // começa no primeiro
+        startIndex: 0,
       }}
     >
       {/* Sem justify-center e sem gutters para caber exatamente 5 */}
@@ -41,7 +41,6 @@ export function CarouselPlugin() {
           >
             <Card className="h-full">
               <CardContent className="flex aspect-square items-center justify-center p-6">
-                <span className="text-4xl font-semibold">{index + 1}</span>
               </CardContent>
             </Card>
           </CarouselItem>

@@ -15,8 +15,8 @@ const FeatureGrid = () => {
   return (
     <section id="features" aria-labelledby="features-title" className="py-16 bg-[#f3f3f3]">
       <div className="container mx-auto px-4 justify-center">
-        <h2 id="features-title" className="text-3xl font-bold mb-8 text-gray-900">
-          Por que escolher a Técnico Global?
+        <h2 id="features-title" className="items-center text-3xl font-bold mb-8 text-gray-900">
+          Por que escolher a GlobalTec?
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f, i) => (

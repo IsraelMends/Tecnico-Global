@@ -7,6 +7,7 @@ const HeaderButtom = () => {
     { id: "home", label: "Início" },
     { id: "About", label: "Sobre Nós" },
     { id: "Contact", label: "Contato" },
+    { id: "Parceiros", label: "Nossos Parceiros" },
   ];
 
   const [activeItem, setActiveItem] = useState("home");

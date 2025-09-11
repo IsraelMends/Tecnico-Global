@@ -3,7 +3,6 @@
 import * as React from "react"
 import Image from "next/image"
 import  AppModal  from "@/components/app-modal"
-import { Button } from "@/components/ui/button"
 
 type WhatsAppIconWithModalProps = {
   src?: string

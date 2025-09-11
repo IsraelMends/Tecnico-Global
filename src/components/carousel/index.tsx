@@ -3,10 +3,10 @@ import PartnerLogosCarousel from "./carousel-content"
 export default function Carousel () {
     return(
         <section id="Parceiros" 
-        className="max-w-9xl mx-auto px-4 text-center"
+        className="max-w-9xl mx-auto px-4 text-center h-100"
         >
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h2 className="mt-8 text-3xl md:text-4xl font-bold text-gray-800">
           NOSSOS PARCEIROS
         </h2>
 

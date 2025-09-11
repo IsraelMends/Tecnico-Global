@@ -1,29 +1,26 @@
-import { CarouselPlugin } from "./service_carousel";
+import PartnerLogosCarousel from "./carousel-content"
 
-const Services: React.FC = () => {
-  return (
-    <section id="Parceiros">
-      <div className="bg-[#f3f3f3] py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl text-secondary font-bold text-center mb-12">
-            Nossos Parceiros
-          </h2>
-          <div className="flex justify-center">
-            <p className="text text-black font-bold text-center mb-12">
-              Nossos polos parceiros oferecem qualidade, inovação e
-              flexibilidade no ensino, garantindo que você tenha acesso a uma
-              educação de excelência onde estiver.
-            </p>
-          </div>
+export default function Carousel () {
+    return(
+        <section id="Parceiros" 
+        className="max-w-9xl mx-auto px-4 text-center shadow shadow-primary"
+        >
+        {/* Título */}
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          NOSSOS PARCEIROS
+        </h2>
 
-          {/* Certifique-se de passar dados reais para o ServiceCarousel */}
-          
-          <CarouselPlugin/>
+        {/* Descrição */}
+        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          Trabalhamos lado a lado com instituições que compartilham nossa
+          visão de qualidade e inovação na educação. Conheça alguns dos nossos
+          principais parceiros.
+        </p>
 
+        {/* Carrossel */}
+        <div className="mt-10">
+          <PartnerLogosCarousel />
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default Services;
+      </section>
+    )
+}

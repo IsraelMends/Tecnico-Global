@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { AppModal } from "@/components/app-modal"
+import  AppModal  from "@/components/app-modal"
 import { Button } from "@/components/ui/button"
 
 type WhatsAppIconWithModalProps = {
@@ -46,28 +46,13 @@ export function WhatsAppFloatButton({
       </button>
 
       {/* Modal reutilizável */}
-      <AppModal
-        open={open}
-        onOpenChange={setOpen}
-        title={modalTitle}
-        description={modalDescription}
-      >
-        {modalContent ?? (
-          <div className="flex flex-col gap-4">
-            <p>Você pode iniciar uma conversa conosco pelo WhatsApp:</p>
-            <div className="flex gap-2">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-green-600 hover:bg-green-700">
-                  Abrir WhatsApp
-                </Button>
-              </a>
-              <Button variant="secondary" onClick={() => setOpen(false)}>
-                Fechar
-              </Button>
-            </div>
-          </div>
-        )}
-      </AppModal>
+         <AppModal
+           isOpen={open}
+           onClose={() => setOpen(false)}
+           whatsappNumber="5531984770007" // DDI + DDD + número, apenas dígitos
+           policyUrl="/politica-de-privacidade"
+           originLabel="Botão Hero"
+         />
     </>
   )
 }

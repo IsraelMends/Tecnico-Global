@@ -1,6 +1,10 @@
+"use client";
+
 import { IoCall } from "react-icons/io5";
 
-import { useState } from "react";
+import * as React from "react";
+
+import AppModal from "@/components/app-modal";
 
 const HeaderButtom = () => {
   const menuItems = [
@@ -10,7 +14,8 @@ const HeaderButtom = () => {
     { id: "Parceiros", label: "Nossos Parceiros" },
   ];
 
-  const [activeItem, setActiveItem] = useState("home");
+  const [activeItem, setActiveItem] = React.useState("home");
+  const [open, setOpen] = React.useState(false);
 
   return (
     <div className="hidden md:flex items-center space-x-8">
@@ -31,11 +36,19 @@ const HeaderButtom = () => {
       <button
         className="bg-[#8c15e8] text-white px-6 py-2 rounded-md flex items-center space-x-2 hover:bg-[#19edd0] hover:text-[#241645] transition-all duration-300"
         aria-label="Entre em contato"
-        onClick={() => console.log("modal")}
+        onClick={() => setOpen(true)}
       >
         <IoCall className="text-xl" />
         <span>Entre em contato</span>
       </button>
+
+      <AppModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        whatsappNumber="5531984770007" // DDI + DDD + número, apenas dígitos
+        policyUrl="/politica-de-privacidade"
+        originLabel="Botão Hero"
+      />
     </div>
   );
 };

@@ -30,7 +30,7 @@ export const useAppModalForm = ({ onClose, whatsappNumber, originLabel }: Params
     setSubmitting(true);
     try {
       const digits = onlyDigits(phone);
-      const msg = `Olá! Meu nome é ${fullName}. Telefone: ${digits}. Concordo com a Política de Privacidade.${originLabel ? ` Origem: ${originLabel}.` : ""}`;
+      const msg = `Olá! Meu nome é ${fullName}. Poderia me apresentar as propostas`;
       const url = buildWhatsAppUrl(onlyDigits(whatsappNumber), msg);
       window.open(url, "_blank", "noopener,noreferrer");
       onClose();

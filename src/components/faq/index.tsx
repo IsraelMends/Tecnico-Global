@@ -5,9 +5,16 @@ import { useState } from "react";
 type QA = { q: string; a: string };
 
 const QA_LIST: QA[] = [
-  { q: "Quais serviços vocês oferecem?", a: "Consultoria, implementação e suporte contínuo em soluções técnicas." },
-  { q: "Como funciona o suporte?", a: "Atendimento via e-mail e canal dedicado em horário comercial." },
-  { q: "Há contrato mínimo?", a: "Podemos começar por projeto fechado ou plano mensal sem fidelidade." },
+  { q: "Qual a diferença entre curso técnico regular e curso técnico por competência?", a: "O curso técnico regular segue uma carga horária estruturada, com aulas, módulos e atividades obrigatórias. Já o curso técnico por competência avalia e reconhece sua experiência prática comprovada, possibilitando a certificação de forma mais rápida." },
+  { q: "O certificado é válido em todo o Brasil?", a: "Sim. Todos os cursos da Global Tec são autorizados e têm validade nacional, podendo ser utilizados tanto para progressão na carreira quanto em concursos e oportunidades no mercado de trabalho." },
+  { q: "Quem pode fazer um curso técnico por competência?", a: "Profissionais com, no mínimo, 2 anos de experiência comprovada na área desejada podem solicitar a certificação por competência." },
+  {q:"Preciso de ensino médio completo para me matricular?", a:"Sim. Para obter o certificado técnico é necessário ter concluído o ensino médio ou estar cursando o último ano."},
+  {q:"Quanto tempo leva para concluir o curso?", a:"Nos cursos regulares, o tempo varia de acordo com a área escolhida (em média de 12 a 24 meses). Já na certificação por competência, o processo pode ser concluído em até 48 horas, após validação da documentação."},
+  {q:"O curso é online ou presencial?", a:"A Global Tec oferece flexibilidade: parte teórica online e, quando necessário, atividades práticas podem ser presenciais ou realizadas em polos parceiros."},
+  {q:"Posso usar o certificado para concursos públicos?", a:"Sim, desde que o edital do concurso aceite cursos técnicos de nível médio autorizados pelo MEC/SISTEC."},
+  {q:"Existe suporte durante o curso?", a:"Sim! Cada aluno conta com acompanhamento de tutores e equipe pedagógica para tirar dúvidas e orientar em cada etapa."},
+  {q:"Posso pagar parcelado?", a:"Sim. Oferecemos condições de pagamento facilitadas, além de descontos exclusivos em determinadas campanhas."},
+  {q:"Como faço minha matrícula?", a:"Basta entrar em contato com nossa equipe de consultores, que fará toda a orientação do processo de matrícula e acesso ao curso."},
 ];
 
 const FAQ = () => {

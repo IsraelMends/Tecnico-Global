@@ -2,7 +2,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import About from "@/components/about";
-import Services from "@/components/carousel";
+import Carousel from "@/components/carousel";
 import FeatureGrid from "@/components/feature_grid";
 import FAQ from "@/components/faq";
 import ContactCTA from "@/components/contact_cta";
@@ -17,7 +17,7 @@ export default function HomePage() {
       <Hero />
       <FeatureGrid />
       <About />
-      <Services />
+      <Carousel />
       <FAQ />
       <ContactCTA />
       <Footer />

@@ -15,11 +15,7 @@ type WhatsAppIconWithModalProps = {
 
 export function WhatsAppFloatButton({
   src = "/whatsapp-svgrepo-com.svg",
-  modalContent,
-  modalTitle = "Fale conosco no WhatsApp",
-  modalDescription = "Clique abaixo para iniciar uma conversa.",
   className = "w-16 h-16", // tamanho padrão maior
-  whatsappHref = "https://wa.me/5500000000000", // ajuste para o seu número
 }: WhatsAppIconWithModalProps) {
   const [open, setOpen] = React.useState(false)
 

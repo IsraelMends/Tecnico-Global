@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+
 import AppModal from "@/components/app-modal";
 
 const HeroButtons = () => {
@@ -14,9 +16,9 @@ const HeroButtons = () => {
       >
         Venha fazer parte
       </button>
-      <button className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-all">
+      <Link href="/about" className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-all">
         Sobre
-      </button>
+      </Link>
 
       <AppModal
         isOpen={open}

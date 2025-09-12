@@ -6,12 +6,19 @@ import { Button } from "@/components/ui/button";
 import { TimelineCard } from "@/components/timeline-card";
 import { ValueCard } from "@/components/value-card";
 import AppModal from "@/components/app-modal";
+import Header from "@/components/header";
+
 import { Target, Users, Lightbulb, Award, ArrowRight } from "lucide-react";
+
 import buildingImage from "@/assets/buildingImage.jpg";
 
 const About = () => {
   const [open, setOpen] = React.useState(false);
   return (
+    <>
+    <header>
+      <Header />
+    </header> 
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-hero overflow-hidden">
@@ -93,12 +100,11 @@ const About = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-accent mb-4">
               Nossos Valores
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do and shape our company
-              culture.
+            <p className="text-xl text-accent max-w-2xl mx-auto">
+              Os princípios que guiam cada passo da nossa jornada.
             </p>
           </div>
 
@@ -162,6 +168,7 @@ const About = () => {
         originLabel="Botão Hero"
       />
     </div>
+    </>
   );
 };
 

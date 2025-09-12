@@ -18,10 +18,10 @@ const ContactLink = () => {
         Fale conosco
       </button>
       <Link
-        href="#services"
+        href="/about"
         className="px-6 py-3 rounded-2xl border border-white/20 text-white hover:bg-white/10 transition"
       >
-        Ver serviços
+        Conhecer mais
       </Link>
 
       <AppModal

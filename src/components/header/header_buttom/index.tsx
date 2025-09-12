@@ -19,7 +19,7 @@ const HeaderButtom = () => {
       {menuItems.map((item) => (
         <a
           key={item.id}
-          href={item.id === "About" ? "/about" : `#${item.id}`}
+          href={item.id === "About" ? "/about" : `/#${item.id}`}
           className={`px-4 py-2 rounded-md transition-all duration-300 ${
             activeItem === item.id
               ? "bg-secondary text-white"

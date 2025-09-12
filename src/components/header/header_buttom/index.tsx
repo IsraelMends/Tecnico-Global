@@ -1,14 +1,11 @@
 "use client";
 
 import { IoCall } from "react-icons/io5";
-
 import * as React from "react";
-
 import AppModal from "@/components/app-modal";
 
 const HeaderButtom = () => {
   const menuItems = [
-    { id: "home", label: "Início" },
     { id: "About", label: "Sobre Nós" },
     { id: "Contact", label: "Contato" },
     { id: "Parceiros", label: "Nossos Parceiros" },
@@ -22,7 +19,7 @@ const HeaderButtom = () => {
       {menuItems.map((item) => (
         <a
           key={item.id}
-          href={`#${item.id}`}
+          href={item.id === "About" ? "/about" : `#${item.id}`}
           className={`px-4 py-2 rounded-md transition-all duration-300 ${
             activeItem === item.id
               ? "bg-secondary text-white"

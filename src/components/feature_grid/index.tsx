@@ -20,7 +20,7 @@ const FeatureGrid = () => {
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f, i) => (
-            <article key={i} className="rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow transition-shadow">
+            <article key={i} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow transition-shadow">
               <div className="w-12 h-12 rounded-xl bg-secondary text-white flex items-center justify-center text-xl mb-4">
                 {f.icon}
               </div>

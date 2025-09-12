@@ -17,7 +17,7 @@ export default function LogoCard({ name, src, href }: LogoCardProps) {
         "h-full w-full ",
         "flex items-center justify-center",
         "rounded-2xl border bg-white/70 dark:bg-zinc-900/60",
-        "shadow-sm hover:shadow-md shadow-primary",
+        "shadow-sm hover:shadow-md ",
         "transition-all duration-200",
         "p-4 md:p-6",
         "ring-0 hover:ring-2 ring-zinc-200 dark:ring-zinc-800",
@@ -25,7 +25,7 @@ export default function LogoCard({ name, src, href }: LogoCardProps) {
       title={name}
       aria-label={name}
     >
-      <div className="relative w-full max-w-[180px] h-16 md:h-20">
+      <div className="relative w-full max-w-[180px] h-24 md:h-32 pl-4">
         <Image
           src={src}
           alt={name}

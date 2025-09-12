@@ -1,7 +1,6 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
-import About from "@/components/about";
 import Carousel from "@/components/carousel";
 import FeatureGrid from "@/components/feature_grid";
 import FAQ from "@/components/faq";
@@ -16,12 +15,11 @@ export default function HomePage() {
       <Header />
       <Hero />
       <FeatureGrid />
-      <About />
       <Carousel />
       <FAQ />
       <ContactCTA />
       <Footer />
-      <WhatsAppFloatButton/>
+      <WhatsAppFloatButton />
     </>
   );
 }

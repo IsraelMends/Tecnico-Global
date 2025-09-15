@@ -16,6 +16,7 @@ export default function AppModalForm({ onClose, whatsappNumber, policyUrl, origi
   return (
     <form onSubmit={(e) => { e.preventDefault(); submit(); }} className="space-y-4">
       <AppModalFormFields.FullName value={fields.fullName} onChange={set.setFullName} />
+      <AppModalFormFields.Email value={fields.email} onChange={set.setEmail} />
       <AppModalFormFields.Phone value={fields.phone} onChange={set.setPhone} />
       <AppModalFormFields.Privacy checked={fields.accepted} onChange={set.setAccepted} policyUrl={policyUrl} />
       {error && <AppModalError>{error}</AppModalError>}

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { onlyDigits, isPhoneValid } from "../../app_modal_utils/app_modal_phone";
-import { isFullNameValid } from "../../app_modal_utils/app_modal_validation";
+import { isEmailValid, isFullNameValid } from "../../app_modal_utils/app_modal_validation";
 import { buildWhatsAppUrl } from "../../app_modal_lib/app_modal_whatsapp";
 
 interface Params {
@@ -12,13 +12,14 @@ interface Params {
 export const useAppModalForm = ({ onClose, whatsappNumber, originLabel }: Params) => {
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [accepted, setAccepted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const isValid = useMemo(() => {
-    return isFullNameValid(fullName) && isPhoneValid(phone) && accepted;
-  }, [fullName, phone, accepted]);
+    return isFullNameValid(fullName) && isPhoneValid(phone) && isEmailValid(email) && accepted;
+  }, [fullName, phone, email, accepted]);
 
   const submit = useCallback(() => {
     if (!isValid) {
@@ -42,8 +43,8 @@ export const useAppModalForm = ({ onClose, whatsappNumber, originLabel }: Params
   }, [accepted, fullName, onClose, originLabel, phone, whatsappNumber, isValid]);
 
   return {
-    fields: { fullName, phone, accepted },
-    set: { setFullName, setPhone, setAccepted },
+    fields: { fullName, phone, email, accepted },
+    set: { setFullName, setPhone, setEmail, setAccepted },
     error,
     submitting,
     isValid,

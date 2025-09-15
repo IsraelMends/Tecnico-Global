@@ -1,3 +1,5 @@
+import {makeMetadata} from "@/lib/seo/metadata";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
@@ -23,3 +25,15 @@ export default function HomePage() {
     </>
   );
 }
+
+
+export const metadata = makeMetadata({
+  title: "Tecnico Global - Cursos Técnicos e Profissionalizantes",
+  description:
+    "Formação prática e focada no mercado de trabalho. Cursos técnicos reconhecidos e infraestrutura moderna.",
+  openGraph: {
+    images: [
+      "/og?title=Tecnico%20Global&subtitle=Cursos%20Técnicos%20e%20Profissionalizantes",
+    ],
+  },
+})

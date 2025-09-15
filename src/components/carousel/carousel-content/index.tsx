@@ -53,7 +53,7 @@ export default function PartnerLogosCarousel() {
 
   return (
     <Carousel
-      className="w-full max-w-47l mx-auto"
+      className="w-full max-w-7xl mx-auto"
       plugins={canScroll ? [plugin.current] : []}
       onMouseEnter={canScroll ? plugin.current.stop : undefined}
       onMouseLeave={canScroll ? plugin.current.reset : undefined}

@@ -1,14 +1,13 @@
+"use client";
 
-"use client"
-
-import * as React from "react"
-import Image from "next/image"
+import * as React from "react";
+import Image from "next/image";
 
 export type LogoCardProps = {
-  name: string
-  src: string
-  href?: string
-}
+  name: string;
+  src: string;
+  href?: string;
+};
 
 export default function LogoCard({ name, src, href }: LogoCardProps) {
   const body = (
@@ -25,7 +24,7 @@ export default function LogoCard({ name, src, href }: LogoCardProps) {
       title={name}
       aria-label={name}
     >
-      <div className="relative w-full max-w-[180px] h-24 md:h-32 pl-4">
+      <div className="relative w-full max-w-[180px] h-36 md:h-32">
         <Image
           src={src}
           alt={name}
@@ -36,10 +35,10 @@ export default function LogoCard({ name, src, href }: LogoCardProps) {
         />
       </div>
     </div>
-  )
+  );
 
   if (href) {
-    const external = /^https?:\/\//.test(href)
+    const external = /^https?:\/\//.test(href);
     return (
       <a
         href={href}
@@ -49,7 +48,7 @@ export default function LogoCard({ name, src, href }: LogoCardProps) {
       >
         {body}
       </a>
-    )
+    );
   }
-  return body
+  return body;
 }

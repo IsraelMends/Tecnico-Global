@@ -7,10 +7,11 @@ const Header_Nav = () => {
     <div className="flex items-center justify-between">
       <div className="flex items-center">
         <span className="flex ml-3 text-2xl items- font-bold text-white">
+          <a className="flex" href="/">
           <div className="flex size-10 mr-2">
             <img src="/globo.png" alt="Image Globo" />
           </div>
-          <div className="py-1">Técnico Global</div>
+          <div className="py-1">GlobalTec</div></a>
         </span>
       </div>
 

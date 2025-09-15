@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tecnico Global",
+  title: "GlobalTec",
   description: "A plataforma para gestão de projetos técnicos",
 };
 

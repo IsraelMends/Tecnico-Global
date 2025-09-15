@@ -1,19 +1,20 @@
+// lib/seo/config.ts
 export const siteConfig = {
-name: "GlobalTec",
-slogan: "Soluções simples e eficazes para suas necessidades",
-domain: "https://www.seudominio.com", // SEM barra final
-locale: "pt-BR",
-locales: ["pt-BR"], // adicione ex: ["pt-BR", "en-US"] se for multilingue
-logoUrl: "/globo.png", // caminho público
-ogImage: "/Global-Full.png", // fallback OG
-address: {
-name: "Técnico Global",
-street: "Rua Exemplo, 123",
-city: "Cidade",
-state: "UF",
-zip: "00000-000",
-country: "BR",
-phone: "+55 00 0000-0000",
-email: "contato@seudominio.com"
-}
+  name: "Tecnico Global",
+  slogan: "Cursos técnicos e formação profissional de qualidade",
+  domain: "https://www.tecnicoglobal.com.br",
+  locale: "pt-BR",
+  locales: ["pt-BR"],
+  logoUrl: "/logo.png",
+  ogImage: "/og-default.png",
+  address: {
+    name: "Tecnico Global",
+    street: "Rua Exemplo, 123",
+    city: "Sua Cidade",
+    state: "UF",
+    zip: "00000-000",
+    country: "BR",
+    phone: "+55 00 0000-0000",
+    email: "contato@tecnicoglobal.com.br"
+  }
 } as const

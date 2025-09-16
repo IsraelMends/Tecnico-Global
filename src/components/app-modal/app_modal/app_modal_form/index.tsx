@@ -1,3 +1,5 @@
+import { FormEvent } from "react";
+
 import AppModalFormFields from "./app_modal_form_fields";
 import AppModalButton from "../../app_modal_ui/app_modal_button";
 import AppModalError from "../../app_modal_ui/app_modal_error";
@@ -13,8 +15,26 @@ interface Props {
 export default function AppModalForm({ onClose, whatsappNumber, policyUrl, originLabel }: Props) {
   const { fields, set, error, submitting, isValid, submit } = useAppModalForm({ onClose, whatsappNumber, originLabel });
 
+  //Defini um objeto para armazenar os dados
+  const data = {
+    name: "",
+    telefone: "",
+    email: ""
+  }
+
+  //Função para o envio
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    
+    e.preventDefault() //Previne o comportamento padrão do formulário
+    //Nome e Telefone
+    data.name = fields.fullName
+    data.telefone = fields.phone
+    data.email = fields.email
+    JSON.stringify(data) //Transforma o objeto em JSON
+  }
+
   return (
-    <form onSubmit={(e) => { e.preventDefault(); submit(); }} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <AppModalFormFields.FullName value={fields.fullName} onChange={set.setFullName} />
       <AppModalFormFields.Email value={fields.email} onChange={set.setEmail} />
       <AppModalFormFields.Phone value={fields.phone} onChange={set.setPhone} />
@@ -24,3 +44,4 @@ export default function AppModalForm({ onClose, whatsappNumber, policyUrl, origi
     </form>
   );
 }
+

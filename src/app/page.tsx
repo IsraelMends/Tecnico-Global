@@ -28,7 +28,7 @@ export default function HomePage() {
 
 
 export const metadata = makeMetadata({
-  title: "Tecnico Global - Cursos Técnicos e Profissionalizantes",
+  title: "GlobalTec - Cursos Técnicos e Profissionalizantes",
   description:
     "Formação prática e focada no mercado de trabalho. Cursos técnicos reconhecidos e infraestrutura moderna.",
   openGraph: {

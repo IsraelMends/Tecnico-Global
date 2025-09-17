@@ -1,10 +1,14 @@
-import { delay } from "@/utils/delay";
+"use client";
+import { useState } from "react";
+import ThankYou from "@/components/thankyou";
+import Loading from "@/components/loading";
 
-export default async function Page() {
-    await delay(5000);
-    return (
-        <div>
-            <p>Obrigado por se inscrever!</p>
-        </div>
-    )
+export default function App() {
+  const [done, setDone] = useState(false);
+
+  return done ? (
+    <ThankYou />
+  ) : (
+    <Loading onComplete={() => setDone(true)} />
+  );
 }

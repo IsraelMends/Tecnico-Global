@@ -35,10 +35,6 @@ export default function AppModalForm({
     enterpriseId: 2,
   };
 
-  const token = async () => {
-    return generateToken();
-  };
-
   const sendToApi = async (data: {
     name: string;
     phone: string;
@@ -46,39 +42,48 @@ export default function AppModalForm({
     areaOfInterest: string;
     enterpriseId: number;
   }) => {
-    await fetch("https://api.polofaculdades.com.br/leads/criar", {
-      method: "POST", // pode ser GET, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`, // ou outro formato, depende da API
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Erro: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((result) => {
-        console.log("Sucesso:", result);
-      })
-      .catch((error) => {
-        console.error("Erro na requisição:", error);
+    try {
+      const token = await generateToken();
+      
+      const response = await fetch("https://api.polofaculdades.com.br/leads/criar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
       });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log("Success:", result);
+      return result;
+    } catch (error) {
+      console.error("Request error:", error);
+      throw error;
+    }
   };
 
   //Função para o envio
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); //Previne o comportamento padrão do formulário
-    //Nome e Telefone
-    data.name = fields.fullName;
-    data.phone = fields.phone;
-    data.email = fields.email;
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    try {
+      const formData = {
+        ...data,
+        name: fields.fullName,
+        phone: fields.phone,
+        email: fields.email,
+      };
 
-    //Envia na API
-    sendToApi(data);
-    submit();
+      await sendToApi(formData);
+      await submit();
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
   };
 
   return (

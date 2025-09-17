@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
-import { onlyDigits, isPhoneValid } from "../../app_modal_utils/app_modal_phone";
+import { isPhoneValid } from "../../app_modal_utils/app_modal_phone";
 import { isFullNameValid, isEmailValid } from "../../app_modal_utils/app_modal_validation";
-import { buildWhatsAppUrl } from "../../app_modal_lib/app_modal_whatsapp";
 
 interface Params {
   onClose: () => void;
@@ -30,10 +29,8 @@ export const useAppModalForm = ({ onClose, whatsappNumber, originLabel }: Params
     setError(null);
     setSubmitting(true);
     try {
-      const digits = onlyDigits(phone);
-      const msg = `Olá! Meu nome é ${fullName}. Poderia me apresentar as propostas`;
       const url = '/agradecimento'
-      window.open(url, "noo ener,noreferrer");
+      window.location.href = url;
       onClose();
     } catch (e) {
       setError("Não foi possível abrir o WhatsApp agora. Tente novamente.");

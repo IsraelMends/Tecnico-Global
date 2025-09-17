@@ -10,10 +10,10 @@ import { useAppModalForm } from "../../app_modal_hooks/app_modal_use_form";
 import generateToken from "@/utils/generateToken";
 
 interface Props {
-  onClose: () => void;
-  whatsappNumber: string;
-  policyUrl: string;
-  originLabel?: string;
+  onClose: () => void
+  whatsappNumber: string
+  policyUrl: string
+  originLabel?: string
 }
 
 export default function AppModalForm({
@@ -100,10 +100,7 @@ export default function AppModalForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <AppModalFormFields.FullName
-        value={fields.fullName}
-        onChange={set.setFullName}
-      />
+      <AppModalFormFields.FullName value={fields.fullName} onChange={set.setFullName} />
       <AppModalFormFields.Email value={fields.email} onChange={set.setEmail} />
       <AppModalFormFields.Phone value={fields.phone} onChange={set.setPhone} />
       <AppModalFormFields.Privacy
@@ -113,8 +110,8 @@ export default function AppModalForm({
       />
       {error && <AppModalError>{error}</AppModalError>}
       <AppModalButton disabled={submitting || !isValid}>
-        {submitting ? "Abrindo WhatsApp..." : "Enviar para o WhatsApp"}
+        {submitting ? 'Abrindo WhatsApp...' : 'Enviar para o WhatsApp'}
       </AppModalButton>
     </form>
-  );
+  )
 }

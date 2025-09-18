@@ -2,7 +2,7 @@
 export const siteConfig = {
   name: "Tecnico Global",
   slogan: "Cursos técnicos e formação profissional de qualidade",
-  domain: "https://www.tecnicoglobal.com.br",
+  domain: "https://www.colegiotecnicoglobal.com.br/",
   locale: "pt-BR",
   locales: ["pt-BR"],
   logoUrl: "/logo.png",

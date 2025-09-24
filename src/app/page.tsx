@@ -1,4 +1,4 @@
-import {makeMetadata} from "@/lib/seo/metadata";
+import { makeMetadata } from "@/lib/seo/metadata";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,7 +7,7 @@ import Carousel from "@/components/carousel";
 import FeatureGrid from "@/components/feature_grid";
 import FAQ from "@/components/faq";
 import ContactCTA from "@/components/contact_cta";
-import {WhatsAppFloatButton} from "@/components/whatsapp_float_button"
+import { WhatsAppFloatButton } from "@/components/whatsapp_float_button";
 
 import React from "react";
 
@@ -26,14 +26,11 @@ export default function HomePage() {
   );
 }
 
-
 export const metadata = makeMetadata({
   title: "GlobalTec - Cursos Técnicos e Profissionalizantes",
   description:
     "Formação prática e focada no mercado de trabalho. Cursos técnicos reconhecidos e infraestrutura moderna.",
   openGraph: {
-    images: [
-      "/og?title=Tecnico%20Global&subtitle=Cursos%20Técnicos%20e%20Profissionalizantes",
-    ],
+    images: ["/Global-Full.png"],
   },
-})
+});

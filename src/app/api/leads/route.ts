@@ -63,7 +63,7 @@ async function generateServerToken() {
     
       const data = {
         email: "israelmendes971@gmail.com",
-        password: "ad1601",
+        password: "@ad1601",
       };
     
       fetch("https://api.polofaculdades.com.br/login", {

@@ -1,7 +1,7 @@
 export default async function generateToken(): Promise<string> {
   const data = {
     email: "israelmendes971@gmail.com",
-    password: "ad1601",
+    password: "@1601",
   };
 
   try {

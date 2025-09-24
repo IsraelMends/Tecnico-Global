@@ -35,7 +35,7 @@ export default function AppModalForm({
     phone: "",
     email: "",
     areaOfInterest: "",
-    enterpriseId: 2,
+    enterpriseId: 6,
   };
 
   const sendToApi = async (data: {

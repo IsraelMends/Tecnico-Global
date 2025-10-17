@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ""
   ]
 
-  const dynamicRoutes: string[] = [] // TODO: carregar do CMS/BD se existir
+  const dynamicRoutes: string[] = []
 
   const urls = [...staticRoutes, ...dynamicRoutes].map((path) => ({
     url: `${base}${path}`,

@@ -43,7 +43,7 @@ const About = () => {
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent"></div>
         </section>
 
-        {/* Story Section */}
+
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -73,7 +73,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Timeline Section */}
+
         <section className="py-20">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">

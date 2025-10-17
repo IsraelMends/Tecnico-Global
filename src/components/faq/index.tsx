@@ -5,12 +5,12 @@ import { useState } from "react";
 type QA = { q: string; a: string };
 
 const QA_LIST: QA[] = [
-  { q: "Qual a diferença entre curso técnico regular e curso técnico por competência?", a: "O curso técnico regular segue uma carga horária estruturada, com aulas, módulos e atividades obrigatórias. Já o curso técnico por competência avalia e reconhece sua experiência prática comprovada, possibilitando a certificação de forma mais rápida." },
+  { q: "O que é um curso técnico por competência?", a: "O curso técnico por competência é uma modalidade de ensino que permite ao aluno obter o certificado técnico reconhecido pelo MEC com base nas competências profissionais já adquiridas ao longo da sua experiência de trabalho." },
   { q: "Quem pode fazer um curso técnico por competência?", a: "Profissionais com, no mínimo, 2 anos de experiência comprovada na área desejada podem solicitar a certificação por competência." },
-  {q:"Preciso de ensino médio completo para me matricular?", a:"Sim. Para obter o certificado técnico é necessário ter concluído o ensino médio ou estar cursando o último ano."},
-  {q:"Quanto tempo leva para concluir o curso?", a:"Nos cursos regulares, o tempo varia de acordo com a área escolhida (em média de 12 a 24 meses). Já na certificação por competência, o processo pode ser concluído em até 48 horas, após validação da documentação."},
-  {q:"O curso é online ou presencial?", a:"A Global Tec oferece flexibilidade: parte teórica online e, quando necessário, atividades práticas podem ser presenciais ou realizadas em polos parceiros."},
-  {q:"Posso usar o certificado para concursos públicos?", a:"Sim, desde que o edital do concurso aceite cursos técnicos de nível médio autorizados pelo MEC/SISTEC."},
+  { q: "Preciso de ensino médio completo para me matricular?", a: "Sim. Para obter o certificado técnico é necessário ter concluído o ensino médio ou estar cursando o último ano." },
+  { q: "Quanto tempo leva para concluir o curso?", a: "O Curso Técnico por Competência reconhece aquilo que você já sabe fazer.Em vez de estudar novamente o que já domina, você comprova suas habilidades por meio da sua experiência profissional e, após a validação da documentação, pode conquistar o seu certificado em até 48 horas." },
+  { q: "O curso é online ou presencial?", a: "A Global Tec oferece flexibilidade: parte teórica online e, quando necessário, atividades práticas podem ser presenciais ou realizadas em polos parceiros." },
+  { q: "Posso usar o certificado para concursos públicos?", a: "Sim, desde que o edital do concurso aceite cursos técnicos de nível médio autorizados pelo MEC/SISTEC." },
 ];
 
 const FAQ = () => {

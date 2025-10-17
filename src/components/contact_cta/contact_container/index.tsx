@@ -6,7 +6,7 @@ const ContactContainer = () => {
     <section
       id="Contact"
       aria-labelledby="contact-title"
-      className="py-16 bg-gray-900"
+      className="py-16 bg-gradient-hero"
     >
       <div className="container mx-auto px-4 text-center">
         <ContactUpper />

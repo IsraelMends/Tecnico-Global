@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server'
+const { NEXT_PUBLIC_API_ENTERPRISE_ID, NEXT_PUBLIC_API_SECRET, NEXT_PUBLIC_API_LOGIN, NEXT_PUBLIC_API_URL } = process.env
+
 
 export async function POST(req: Request) {
   try {
@@ -9,7 +11,6 @@ export async function POST(req: Request) {
     const email = String(body.email || '').trim()
     const phone = String(body.phone || '').replace(/\D/g, '') // só dígitos
     const areaOfInterest = String(body.areaOfInterest || '').trim()
-    const enterpriseId = Number(body.enterpriseId ?? 2)
 
     if (!name || !phone) {
       return NextResponse.json({ error: 'name e phone são obrigatórios' }, { status: 400 })
@@ -19,7 +20,7 @@ export async function POST(req: Request) {
     const token = await generateServerToken() // implemente usando segredo do server
 
     // Encaminhe ao backend externo
-    const res = await fetch('https://api.polofaculdades.com.br/leads/criar', {
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/leads/criar`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,9 +32,8 @@ export async function POST(req: Request) {
         email,
         phone,
         areaOfInterest,
-        enterpriseId,
+        enterpriseId: NEXT_PUBLIC_API_ENTERPRISE_ID,
       }),
-      // Você pode ajustar o timeout/caches aqui se precisar
     })
 
     const text = await res.text()
@@ -62,11 +62,11 @@ async function generateServerToken() {
       };
     
       const data = {
-        email: "israelmendes971@gmail.com",
-        password: "@ad1601",
+        email: NEXT_PUBLIC_API_LOGIN,
+        password: NEXT_PUBLIC_API_SECRET,
       };
-    
-      fetch("https://api.polofaculdades.com.br/login", {
+
+      fetch(`${NEXT_PUBLIC_API_URL}/login`, {
         method: "POST", // pode ser GET, PUT, DELETE, etc.
         headers: {
           "Content-Type": "application/json",

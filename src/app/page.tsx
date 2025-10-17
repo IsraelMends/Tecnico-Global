@@ -1,12 +1,13 @@
 import { makeMetadata } from "@/lib/seo/metadata";
 
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import Hero from "@/components/hero";
 import Carousel from "@/components/carousel";
-import FeatureGrid from "@/components/feature_grid";
-import FAQ from "@/components/faq";
 import ContactCTA from "@/components/contact_cta";
+import { CourseCard } from "@/components/course-card";
+import Header from "@/components/header";
+import Hero from "@/components/hero";
+import FAQ from "@/components/faq";
+import FeatureGrid from "@/components/feature_grid";
+import Footer from "@/components/footer";
 import { WhatsAppFloatButton } from "@/components/whatsapp_float_button";
 
 import React from "react";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Hero />
       <FeatureGrid />
       <Carousel />
+      <CourseCard />
       <FAQ />
       <ContactCTA />
       <Footer />

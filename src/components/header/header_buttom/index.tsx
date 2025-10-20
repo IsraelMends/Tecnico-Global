@@ -7,6 +7,7 @@ import AppModal from "@/components/app-modal";
 const HeaderButtom = () => {
   const menuItems = [
     { id: "About", label: "Sobre Nós" },
+    { id: "Courses", label: "Cursos Técnicos" },
     { id: "Contact", label: "Contato" },
     { id: "Parceiros", label: "Nossos Parceiros" },
   ];

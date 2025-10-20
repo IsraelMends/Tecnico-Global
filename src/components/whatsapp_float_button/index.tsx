@@ -44,7 +44,7 @@ export function WhatsAppFloatButton({
          <AppModal
            isOpen={open}
            onClose={() => setOpen(false)}
-           whatsappNumber="5531984770007" // DDI + DDD + número, apenas dígitos
+           whatsappNumber="5594992294042" // DDI + DDD + número, apenas dígitos
            policyUrl="/politica-de-privacidade"
            originLabel="Botão Hero"
          />

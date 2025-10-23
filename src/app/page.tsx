@@ -2,7 +2,7 @@ import { makeMetadata } from "@/lib/seo/metadata";
 
 import Carousel from "@/components/carousel";
 import ContactCTA from "@/components/contact_cta";
-import { CourseCard } from "@/components/course-card";
+// import { CourseCard } from "@/components/course-card";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import FAQ from "@/components/faq";
@@ -19,7 +19,7 @@ export default function HomePage() {
       <Hero />
       <FeatureGrid />
       <Carousel />
-      <CourseCard />
+      {/* <CourseCard /> */}
       <FAQ />
       <ContactCTA />
       <Footer />

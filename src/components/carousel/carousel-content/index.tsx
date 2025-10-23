@@ -11,16 +11,15 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Exemplo: edite aqui suas logos
 const LOGOS = [
   { name: "NACIONAL", src: "/logos/NACIONAL 2.png" },
   { name: "TECMINAS", src: "/logos/TECMINAS 2.png" },
   { name: "EDUTEC", src: "/logos/EDUTEC.png" },
   { name: "UNIMINAS", src: "/logos/UNIMINAS 2.png" },
   { name: "UNITEC", src: "/logos/UNITEC.png" },
+  { name: "Central Minas", src: "/logos/CENTRAL DE MINAS.png" },
 ] as const;
 
-// Hook para breakpoints (1/3/4/5)
 function usePerView() {
   const [perView, setPerView] = React.useState(1);
 

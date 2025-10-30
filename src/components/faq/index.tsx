@@ -17,25 +17,33 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="py-16 bg-[#f3f3f3]">
+    <section id="faq" aria-labelledby="faq-title" className="py-16 bg-[var(--color-muted)] relative">
+      {/* divisor gradiente */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-1/3 h-2 bg-gradient-to-r from-[var(--amber)] via-[var(--primary)] to-[var(--blue-detail)] rounded-b-full opacity-80 mb-5" />
       <div className="container mx-auto px-4 ">
-        <h2 id="faq-title" className="text-3xl font-bold mb-8 text-gray-900">
+        {/* badge */}
+        <span className="mb-3 inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold bg-[var(--amber)] text-[var(--gray-contrast)] shadow shadow-[var(--primary-glow)] animate-fade-in">
+          Dúvidas? Temos a resposta!
+        </span>
+        <h2 id="faq-title" className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)] bg-clip-text text-transparent drop-shadow animate-slide-up mb-8">
           Perguntas frequentes
         </h2>
 
-        <div className=" bg-white divide-y divide-gray-200 border border-gray-200 rounded-2xl">
+        <div className="bg-[var(--color-card)] divide-y divide-[var(--amber)] border border-[var(--amber)] rounded-2xl">
           {QA_LIST.map((item, i) => {
             const open = openIndex === i;
             return (
               <div key={i} className="p-4">
                 <button
-                  className="w-full text-left flex items-center justify-between py-2"
+                  className="w-full text-left flex items-center justify-between py-2 font-medium group hover:shadow-md hover:bg-[var(--color-muted)] transition relative"
                   aria-expanded={open}
                   aria-controls={`faq-item-${i}`}
                   onClick={() => setOpenIndex(open ? null : i)}
                 >
-                  <span className="font-medium text-gray-900">{item.q}</span>
-                  <span aria-hidden className="ml-4">{open ? "−" : "+"}</span>
+                  <span className="font-medium text-[var(--color-foreground)] flex items-center gap-2">
+                    {item.q}
+                    <span className={`inline-block transition-transform duration-300 ${open ? 'rotate-90' : ''}`}>▶</span>
+                  </span>
                 </button>
                 <div
                   id={`faq-item-${i}`}
@@ -43,7 +51,8 @@ const FAQ = () => {
                   aria-live="polite"
                   className={`grid transition-[grid-template-rows] duration-200 ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                 >
-                  <div className="overflow-hidden text-gray-700">
+                  <div className="overflow-hidden text-[var(--color-muted-foreground)]">
+                    {open && <div className="h-1.5 bg-[var(--amber)] rounded-t-xl mb-2" />}
                     <p className="pt-2">{item.a}</p>
                   </div>
                 </div>

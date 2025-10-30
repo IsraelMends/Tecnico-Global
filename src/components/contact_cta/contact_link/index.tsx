@@ -5,6 +5,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import AppModal from "@/components/app-modal";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ContactLink = () => {
   const [open, setOpen] = React.useState(false);
@@ -13,13 +14,14 @@ const ContactLink = () => {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="px-6 py-3 rounded-2xl bg-primary text-black font-semibold hover:opacity-90 transition"
+        className="px-7 py-3 rounded-2xl bg-gradient-to-tr from-[var(--primary)] via-[var(--amber)] to-[var(--burnt-orange)] text-white font-bold hover:scale-105 transition-all shadow-lg shadow-[var(--primary-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white flex items-center gap-2"
+        aria-label="Abrir formulário de contato"
       >
-        Fale conosco
+        <FaWhatsapp className="text-xl" /> Fale conosco
       </button>
       <Link
         href="/about"
-        className="px-6 py-3 rounded-2xl border border-white/20 text-white hover:bg-white/10 transition"
+        className="px-7 py-3 rounded-2xl border-2 border-[var(--blue-detail)] text-white bg-white/10 hover:bg-[var(--blue-detail)] hover:text-white transition-all font-bold"
       >
         Conhecer mais
       </Link>
@@ -29,7 +31,7 @@ const ContactLink = () => {
         onClose={() => setOpen(false)}
         whatsappNumber="5594992294042" // DDI + DDD + número, apenas dígitos
         policyUrl="/politica-de-privacidade"
-        originLabel="Botão Hero"
+        originLabel="Botão CTA"
       />
     </div>
   );

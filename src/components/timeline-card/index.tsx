@@ -14,15 +14,15 @@ export function TimelineCard({  title, description, isLeft = false }: TimelineCa
           <div className="bg-gradient-primary bg-clip-text text-transparent">
 
           </div>
-          <h4 className="text-xl font-semibold mb-3 text-foreground">{title}</h4>
+          <h4 className="text-xl font-semibold mb-3 text-[var(--primary)]">{title}</h4>
           <p className="text-muted-foreground leading-relaxed">{description}</p>
         </Card>
       </div>
       
       {/* Timeline dot */}
       <div className="flex flex-col items-center">
-        <div className="w-4 h-4 bg-gradient-primary rounded-full shadow-elegant animate-float"></div>
-        <div className="w-1 h-20 bg-gradient-to-b from-primary to-primary-glow mt-2"></div>
+        <div className="w-4 h-4 bg-gradient-to-br from-[var(--amber)] via-[var(--primary)] to-[var(--blue-detail)] rounded-full shadow-elegant animate-float"></div>
+        <div className="w-1 h-20 bg-gradient-to-b from-[var(--primary)] to-[var(--primary-glow)] mt-2"></div>
       </div>
       
       <div className="flex-1"></div>

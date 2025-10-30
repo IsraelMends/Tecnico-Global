@@ -11,14 +11,14 @@ const HeroContent = () => {
         Novo no Brasil &bull; Certificação Super Rápida
       </span>
 
-      <h1 className="text-4xl md:text-6xl font-black leading-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)] mb-4 animate-slide-up">
+      <h1 className="text-4xl md:text-6xl font-black leading-tight text-[var(--gray-contrast)] mb-4 animate-slide-up">
         Bem vindo à <br/>
-        <span className="relative inline-block">
+        <span className="relative inline-block text-[var(--primary)]">
           GlobalTec
           <span className="absolute left-0 -bottom-2 w-full h-2 rounded-full bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)]"></span>
         </span>
       </h1>
-      <p className="text-lg md:text-2xl text-white/90 font-medium mb-8 animate-fade-in">
+      <p className="text-lg md:text-2xl text-foreground/80 font-medium mb-8 animate-fade-in">
         Seu próximo passo para conquistar seu certificado técnico com agilidade, aceito em todo o Brasil.
       </p>
       <div className="flex gap-4 w-full animate-slide-up">
@@ -29,7 +29,7 @@ const HeroContent = () => {
           <FaWhatsapp className="text-xl animate-pulse group-hover:scale-125" />
           Falar no WhatsApp
         </button>
-        <a href="/about" className="flex items-center gap-2 border-2 border-[var(--blue-detail)] text-[var(--blue-detail)] px-8 py-4 rounded-xl font-bold text-lg bg-white/10 hover:bg-[var(--blue-detail)] hover:text-white hover:shadow-md transition-all duration-200">
+        <a href="/about" className="flex items-center gap-2 border-2 border-[var(--blue-detail)] text-[var(--blue-detail)] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[var(--blue-detail)] hover:text-white hover:shadow-md transition-all duration-200">
           Saiba mais <FaArrowRight className="ml-1" />
         </a>
       </div>

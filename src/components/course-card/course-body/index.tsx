@@ -12,17 +12,17 @@ export function CourseCardBody({ course }: CourseCardProps) {
   return (
     <Card className="relative overflow-hidden rounded-2xl bg-card p-0 shadow-sm flex flex-col flex-1">
       {/* faixa superior com gradiente */}
-      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-primary via-accent to-secondary" />
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)]" />
 
       {/* leve acento de cor no canto */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-8 -top-8 h-20 w-20 rounded-full bg-gradient-to-br from-accent to-secondary opacity-20"
+        className="pointer-events-none absolute -left-8 -top-8 h-20 w-20 rounded-full bg-[var(--purple-soft)] opacity-20"
       />
 
       <div className="relative p-6 sm:p-7 flex flex-col flex-1">
-        <div className="mb-4 flex items-center gap-2 text-accent">
-          <h3 className="text-xl font-semibold leading-tight text-accent">
+        <div className="mb-4 flex items-center gap-2 text-[var(--primary)]">
+          <h3 className="text-xl font-semibold leading-tight text-[var(--primary)]">
             {title}
           </h3>
         </div>
@@ -31,7 +31,7 @@ export function CourseCardBody({ course }: CourseCardProps) {
           {isList ? (
             <ol className="list pl-5 space-y-2.5 text-[15px] text-muted-foreground">
               {(description as string[]).map((item, i) => (
-                <li key={i} className="text-pretty marker:text-secondary/80">
+                <li key={i} className="text-pretty marker:text-[var(--amber)]">
                   {item}
                 </li>
               ))}

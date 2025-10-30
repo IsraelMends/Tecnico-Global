@@ -12,11 +12,11 @@ const HeroButtons = () => {
     <div className="space-x-4">
       <button
         onClick={() => setOpen(true)}
-        className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all"
+        className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg hover:bg-[var(--burnt-orange)] hover:shadow-lg hover:shadow-[var(--primary-glow)] transition-all"
       >
         Venha fazer parte
       </button>
-      <Link href="/about" className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-all">
+      <Link href="/about" className="border border-[var(--amber)] text-[var(--amber)] px-6 py-3 rounded-lg hover:bg-[var(--amber)] hover:text-gray-900 hover:shadow-lg hover:shadow-[var(--purple-soft)] transition-all">
         Sobre
       </Link>
 

@@ -24,31 +24,35 @@ const About = () => {
       </header>
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-hero overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-white overflow-hidden">
+          {/* elementos claros de fundo para dar vida sem escurecer */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute -top-10 left-1/4 w-80 h-80 rounded-full bg-[var(--amber)]/30 blur-3xl" />
+            <div className="absolute bottom-0 right-1/5 w-72 h-72 rounded-full bg-[var(--primary)]/20 blur-3xl" />
+          </div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold text-accent mb-6 animate-fade-in">
-                Sobre a Global Tec
+              <span className="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold bg-[var(--amber)]/20 text-[var(--gray-contrast)] border border-[var(--amber)]/50 mb-4">Formação técnica reconhecida • Em todo o Brasil</span>
+              <h1 className="text-5xl md:text-6xl font-black text-[var(--color-foreground)] mb-6 animate-fade-in">
+                Sobre a
+                <span className="relative inline-block ml-2">
+                  Global Tec
+                  <span className="absolute left-0 -bottom-2 w-full h-2 rounded-full bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)]"></span>
+                </span>
               </h1>
-              <p className="text-xl text-black/90 leading-relaxed animate-slide-up">
-                Imagine poder transformar sua experiência em qualificação e cada
-                escolha de estudo em um passo real para o futuro. A Global Tec
-                nasceu para tornar isso possível: oferecemos cursos técnicos
-                regulares e por competência, pensados para quem busca
-                crescimento profissional de forma prática, rápida e reconhecida.
+              <p className="text-xl text-[var(--gray-contrast)]/80 leading-relaxed animate-slide-up">
+                Transformamos experiência em qualificação. Cursos técnicos regulares e por competência para acelerar sua carreira com reconhecimento e praticidade.
               </p>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent"></div>
         </section>
 
 
-        <section className="py-20 bg-gradient-subtle">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <p className="text-lg text-foreground leading-relaxed mb-6">
                   Nosso propósito é simples e poderoso: levar ensino de
                   qualidade a quem deseja crescer, com metodologias modernas,
                   acessíveis e que valorizam a prática. Enquanto nossos alunos
@@ -56,7 +60,7 @@ const About = () => {
                   em nós uma parceira comprometida em formar profissionais
                   preparados para os desafios do futuro.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                <p className="text-lg text-foreground leading-relaxed mb-8">
                   Na Global Tec, acreditamos que educação técnica é mais do que
                   conhecimento — é oportunidade, transformação e impacto. Venha
                   descobrir como podemos construir juntos histórias de sucesso.
@@ -77,10 +81,10 @@ const About = () => {
         <section className="py-20">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-4xl font-bold text-[var(--primary)] mb-4">
                 Nossa Missão e Visão
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-[var(--primary)] max-w-2xl mx-auto">
                 A jornada que moldou quem somos hoje e para onde estamos indo.
               </p>
             </div>
@@ -100,62 +104,66 @@ const About = () => {
         </section>
 
         {/* Values Section */}
-        <section className="py-20 bg-gradient-subtle">
+        <section className="py-20 bg-white relative overflow-hidden">
+          {/* decoração suave */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute -top-12 right-1/4 w-72 h-72 rounded-full bg-[var(--amber)]/15 blur-3xl" />
+            <div className="absolute bottom-0 left-1/5 w-80 h-80 rounded-full bg-[var(--primary)]/10 blur-3xl" />
+          </div>
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-accent mb-4">
+              <span className="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold bg-[var(--amber)]/20 text-[var(--gray-contrast)] border border-[var(--amber)]/40 mb-3">O que nos guia</span>
+              <h2 className="text-4xl font-bold text-[var(--primary)] mb-4">
                 Nossos Valores
               </h2>
-              <p className="text-xl text-accent max-w-2xl mx-auto">
-                Os princípios que guiam cada passo da nossa jornada.
+              <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+                Princípios que sustentam nosso compromisso com a sua evolução.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-              <ValueCard
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="h-full"><ValueCard
                 icon={Target}
                 title="Compromisso"
-                description="Garantir seriedade e transparência em cada etapa da jornada educacional."
-              />
-              <ValueCard
+                description="Seriedade e transparência em cada etapa da jornada educacional."
+              /></div>
+              <div className="h-full"><ValueCard
                 icon={Users}
                 title="Inovação"
-                description="Utilizar métodos modernos que unem teoria e prática de forma eficiente."
-              />
-              <ValueCard
+                description="Métodos modernos que unem teoria e prática com eficiência."
+              /></div>
+              <div className="h-full"><ValueCard
                 icon={Lightbulb}
                 title="Valorização da Experiência"
-                description="Reconhecer a trajetória profissional como parte essencial da formação."
-              />
-              <ValueCard
+                description="Sua trajetória profissional conta — e potencializa sua formação."
+              /></div>
+              <div className="h-full"><ValueCard
                 icon={Award}
                 title="Acessibilidade"
-                description="Democratizar o acesso à educação técnica de qualidade."
-              />
-              <ValueCard
+                description="Educação técnica de qualidade, ao alcance de todos."
+              /></div>
+              <div className="h-full"><ValueCard
                 icon={Award}
                 title="Transformação"
-                description="Acreditar que cada aluno pode mudar sua realidade por meio do conhecimento."
-              />
+                description="Conhecimento como ferramenta real de mudança de vida."
+              /></div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-hero text-center">
+        <section className="py-20 bg-[var(--color-muted)] text-center">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Pronto para trabalhar-mos juntos?
+            <h2 className="text-4xl font-bold text-[var(--color-foreground)] mb-6">
+              Pronto para trabalharmos juntos?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Vamos criar algo incrível juntos. Entre em contato e descubra como
-              podemos ajudar a dar vida à sua visão.
+            <p className="text-xl text-[var(--color-muted-foreground)] mb-8 max-w-2xl mx-auto">
+              Vamos criar algo incrível. Fale com nosso time e descubra o melhor caminho para sua certificação.
             </p>
             <Button
               onClick={() => setOpen(true)}
               size="lg"
-              variant="secondary"
-              className="px-8 py-4 text-lg"
+              className="px-8 py-4 text-lg bg-gradient-to-tr from-[var(--primary)] via-[var(--amber)] to-[var(--burnt-orange)] text-white font-bold hover:scale-105 transition-all shadow-lg shadow-[var(--primary-glow)]"
             >
               Comece Hoje
               <ArrowRight className="ml-2 w-6 h-6" />

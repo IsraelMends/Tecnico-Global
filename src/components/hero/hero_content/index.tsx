@@ -11,13 +11,14 @@ const HeroContent = () => {
         Novo no Brasil &bull; Certificação Super Rápida
       </span>
 
-      <h1 className="text-4xl md:text-6xl font-black leading-tight text-white drop-shadow-md mb-4 animate-slide-up">
+      <h1 className="text-4xl md:text-6xl font-black leading-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)] mb-4 animate-slide-up">
         Bem vindo à <br/>
-        <span className="bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)] bg-clip-text text-transparent">
+        <span className="relative inline-block">
           GlobalTec
+          <span className="absolute left-0 -bottom-2 w-full h-2 rounded-full bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)]"></span>
         </span>
       </h1>
-      <p className="text-lg md:text-2xl text-[var(--amber)] font-medium mb-8 animate-fade-in">
+      <p className="text-lg md:text-2xl text-white/90 font-medium mb-8 animate-fade-in">
         Seu próximo passo para conquistar seu certificado técnico com agilidade, aceito em todo o Brasil.
       </p>
       <div className="flex gap-4 w-full animate-slide-up">

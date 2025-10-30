@@ -21,18 +21,18 @@ const HeaderButtom = () => {
         <a
           key={item.id}
           href={item.id === "About" ? "/about" : `/#${item.id}`}
-          className={`px-4 py-2 rounded-md transition-all duration-300 ${
-            activeItem === item.id
-              ? "bg-secondary text-white"
-              : "text-white hover:bg-primary hover:text-[#241645]"
-          }`}
+          className={`px-4 py-2 rounded-md font-bold relative transition-all duration-300 overflow-hidden group
+            ${activeItem === item.id
+              ? "bg-gradient-to-tr from-[var(--primary)] to-[var(--blue-detail)] text-white shadow-xl after:content-[''] after:block after:h-1 after:bg-[var(--blue-detail)] after:rounded-full after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+              : "text-white hover:text-[var(--amber)] hover:bg-[var(--gray-contrast)] after:content-[''] after:block after:h-1 after:bg-[var(--blue-detail)] after:rounded-full after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+            }`}
           aria-label={item.label}
         >
           {item.label}
         </a>
       ))}
       <button
-        className="bg-[#8c15e8] text-white px-6 py-2 rounded-md flex items-center space-x-2 hover:bg-[#19edd0] hover:text-[#241645] transition-all duration-300"
+        className="bg-[var(--amber)] text-[var(--gray-contrast)] px-6 py-2 rounded-md flex items-center space-x-2 font-bold shadow shadow-[var(--primary-glow)] hover:scale-105 transition-all duration-300 focus:ring-2 focus:ring-[var(--amber)]"
         aria-label="Entre em contato"
         onClick={() => setOpen(true)}
       >

@@ -39,7 +39,7 @@ const Header_Mob = () => {
       {/* Botão mobile */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed top-4 right-4 z-50 text-[#19edd0] md:hidden"
+        className="fixed top-4 right-4 z-50 text-[var(--primary)] md:hidden"
         aria-label={isOpen ? "Close Menu" : "Open Menu"}
       >
         {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
@@ -47,7 +47,7 @@ const Header_Mob = () => {
 
       {/* Menu lateral */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-[#241645] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-64 bg-[var(--accent)] transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden z-40`}
       >
@@ -67,8 +67,8 @@ const Header_Mob = () => {
                   onClick={() => setIsOpen(false)} // fecha o menu ao navegar
                   className={`px-4 py-2 rounded-md transition-all duration-300 ${
                     isActive
-                      ? "bg-[#8c15e8] text-white"
-                      : "text-white hover:bg-[#19edd0] hover:text-[#241645]"
+                      ? "bg-secondary text-white"
+                      : "text-white hover:bg-primary hover:text-[var(--accent)]"
                   }`}
                   aria-label={item.label}
                 >
@@ -80,7 +80,7 @@ const Header_Mob = () => {
             {/* Botão de contato (telefone) */}
             <button
               onClick={() => { setOpen(true); setIsOpen(false); }}
-              className="bg-[#8c15e8] text-white px-6 py-2 rounded-md flex items-center justify-center space-x-2 hover:bg-[#19edd0] hover:text-[#241645] transition-all duration-300"
+              className="bg-secondary text-white px-6 py-2 rounded-md flex items-center justify-center space-x-2 hover:bg-primary hover:text-[var(--accent)] transition-all duration-300"
               aria-label="Call Us"
             >
               {" "}

@@ -33,7 +33,7 @@ export const CourseCard = () => {
           {courses.map((course) => (
             <article
               key={course.title}
-              className="group relative rounded-2xl bg-transparent p-0 transition hover:-translate-y-1"
+              className="group relative rounded-2xl bg-transparent p-0 transition hover:-translate-y-1 h-full"
             >
               <CourseCardBody course={course} />
             </article>

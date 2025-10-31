@@ -9,7 +9,6 @@ const HeaderButtom = () => {
     { id: "About", label: "Sobre Nós" },
     { id: "Courses", label: "Cursos Técnicos" },
     { id: "Contact", label: "Contato" },
-    { id: "Parceiros", label: "Nossos Parceiros" },
   ];
 
   const [activeItem, setActiveItem] = React.useState("home");
@@ -32,6 +31,7 @@ const HeaderButtom = () => {
         </a>
       ))}
       <button
+        type="button"
         className="bg-[var(--amber)] text-[var(--gray-contrast)] px-6 py-2 rounded-md flex items-center space-x-2 font-bold shadow shadow-[var(--primary-glow)] hover:scale-105 transition-all duration-300 focus:ring-2 focus:ring-[var(--amber)]"
         aria-label="Entre em contato"
         onClick={() => setOpen(true)}

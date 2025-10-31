@@ -6,7 +6,7 @@ const ContactContainer = () => {
     <section
       id="Contact"
       aria-labelledby="contact-title"
-      className="py-16 bg-gradient-to-br from-[var(--primary)] via-[var(--amber)] to-[var(--burnt-orange)] relative overflow-hidden"
+      className="py-16 bg-accent relative overflow-hidden"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-8 left-1/3 w-80 h-80 rounded-full bg-white/10 blur-3xl" />

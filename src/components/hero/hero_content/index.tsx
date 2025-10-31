@@ -6,10 +6,7 @@ import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 const HeroContent = () => {
   return (
     <div className="md:w-1/2 mb-10 md:mb-0 flex flex-col justify-center items-start text-left max-w-xl mx-auto md:mx-0">
-      {/* badge com destaque */}
-      <span className="mb-4 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold bg-[var(--amber)] text-[var(--gray-contrast)] shadow-lg shadow-[var(--primary-glow)] animate-fade-in">
-        Novo no Brasil &bull; Certificação Super Rápida
-      </span>
+      
 
       <h1 className="text-4xl md:text-6xl font-black leading-tight text-[var(--gray-contrast)] mb-4 animate-slide-up">
         Bem vindo à <br/>

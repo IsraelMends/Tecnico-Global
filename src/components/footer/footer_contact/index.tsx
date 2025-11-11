@@ -14,7 +14,7 @@ const FooterContact = () => {
             target="_blank" rel="noopener noreferrer"
             className="hover:text-[var(--amber)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--amber)] transition-colors"
           >
-            R. Luiz Rodrigues dos Santos, 44 - Todos Os Santos, Cel. Fabriciano
+            Av. ANTÔNIO VILHENA 630, 551 - LIBERDADE, MARABÁ
           </a>
         </li>
       </ul>

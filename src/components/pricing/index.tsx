@@ -27,7 +27,7 @@ export const CoursePricing = () => {
             <Zap className="w-4 h-4" />
             Planos Flexíveis e Acessíveis
           </span>
-          <h2 className="mt-4 text-balance text-5xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-[var(--primary)] via-[var(--amber)] to-[var(--blue-detail)] bg-clip-text text-transparent drop-shadow-lg animate-slide-up">
+          <h2 className="mt-4 text-balance text-5xl sm:text-5xl font-black tracking-tight text-[var(--primary)] drop-shadow-lg animate-slide-up">
             Valores dos Cursos Técnicos
           </h2>
           <p className="mt-6 text-pretty text-lg text-muted-foreground sm:text-xl max-w-xl mx-auto font-medium animate-fade-in">

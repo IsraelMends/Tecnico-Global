@@ -20,7 +20,7 @@ export function PricingCard({ tier }: PricingCardProps) {
     <Card
       className={`relative overflow-hidden rounded-2xl p-0 flex flex-col flex-1 h-full transition-all duration-300 ${
         isPopular
-          ? "bg-gradient-to-br from-[var(--primary)] to-[var(--burnt-orange)] shadow-2xl hover:shadow-3xl hover:scale-105 border-2 border-[var(--amber)]"
+          ? "bg-gradient-to-br from-[#FF8C42] to-[#FF7620] shadow-2xl hover:shadow-3xl hover:scale-105 border-2 border-[var(--amber)]"
           : "bg-card shadow-sm hover:shadow-xl border border-[var(--border)] hover:-translate-y-2"
       }`}
     >
@@ -92,7 +92,7 @@ export function PricingCard({ tier }: PricingCardProps) {
           <div
             className={`rounded-lg p-4 ${
               isPopular
-                ? "bg-white/15 border border-white/20 backdrop-blur-sm"
+                ? "bg-white/20 border border-white/30 backdrop-blur-sm"
                 : "bg-[var(--muted)]"
             }`}
           >
@@ -104,15 +104,15 @@ export function PricingCard({ tier }: PricingCardProps) {
               Parcelado em {tier.installments}x
             </p>
             <p
-              className={`text-lg font-bold ${
-                isPopular ? "text-blue-100" : "text-[var(--primary)]"
+              className={`text-xl font-bold ${
+                isPopular ? "text-white" : "text-[var(--primary)]"
               }`}
             >
               {formatCurrency(tier.monthlyPrice)}
             </p>
             <p
               className={`text-xs mt-2 ${
-                isPopular ? "text-white/70" : "text-muted-foreground"
+                isPopular ? "text-white/95" : "text-muted-foreground"
               }`}
             >
               por mês
@@ -122,20 +122,20 @@ export function PricingCard({ tier }: PricingCardProps) {
           <div
             className={`border-t ${
               isPopular
-                ? "border-white/20 pt-4"
+                ? "border-white/30 pt-4"
                 : "border-[var(--border)] pt-4"
             }`}
           >
             <div className="flex items-center justify-center gap-2">
               <Check
                 className={`w-4 h-4 ${
-                  isPopular ? "text-blue-100" : "text-[var(--primary)]"
+                  isPopular ? "text-white" : "text-[var(--primary)]"
                 }`}
               />
               <p
                 className={`text-xs font-medium ${
                   isPopular
-                    ? "text-white/90"
+                    ? "text-white"
                     : "text-muted-foreground"
                 }`}
               >

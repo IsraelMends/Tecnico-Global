@@ -75,7 +75,7 @@ export function PricingCard({ tier }: PricingCardProps) {
           <div className="pricing-amount">
             <p
               className={`text-sm font-medium mb-1 ${
-                isPopular ? "text-blue-100" : "text-muted-foreground"
+                isPopular ? "text-white" : "text-muted-foreground"
               }`}
             >
               Valor Total

@@ -51,8 +51,8 @@ export const CoursePricing = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Certificado MEC</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-white mb-2">Certificado MEC</h3>
+              <p className="text-sm text-primary">
                 Todos os cursos são 100% reconhecidos pelo Ministério da Educação
               </p>
             </div>
@@ -65,8 +65,8 @@ export const CoursePricing = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Até 12x</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-white mb-2">Até 12x</h3>
+              <p className="text-sm text-primary">
                 Parcelamento sem juros para facilitar seu investimento
               </p>
             </div>
@@ -79,8 +79,8 @@ export const CoursePricing = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Suporte 24/7</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-white mb-2">Suporte 24/7</h3>
+              <p className="text-sm text-primary">
                 Equipe especializada pronta para ajudar em sua jornada
               </p>
             </div>

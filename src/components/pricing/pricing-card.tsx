@@ -74,14 +74,14 @@ export function PricingCard({ tier }: PricingCardProps) {
         <div className="flex-1 space-y-6">
           <div className="pricing-amount">
             <p
-              className={`text-sm font-medium mb-1 ${
+              className={`text-xs font-medium mb-2 ${
                 isPopular ? "text-white" : "text-muted-foreground"
               }`}
             >
               Valor Total
             </p>
             <p
-              className={`text-4xl font-black ${
+              className={`text-2xl sm:text-3xl lg:text-4xl font-black break-words ${
                 isPopular ? "text-white" : "text-[var(--primary)]"
               }`}
             >

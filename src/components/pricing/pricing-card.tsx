@@ -74,7 +74,7 @@ export function PricingCard({ tier }: PricingCardProps) {
         <div className="flex-1 space-y-5">
           <div className="pricing-amount">
             <p
-              className={`text-xs font-medium mb-2 ${
+              className={`text-xs font-medium mb-1 ${
                 isPopular ? "text-white" : "text-muted-foreground"
               }`}
             >

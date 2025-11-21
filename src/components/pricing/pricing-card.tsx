@@ -52,7 +52,7 @@ export function PricingCard({ tier }: PricingCardProps) {
         }`}
       />
 
-      <div className={`relative ${isPopular ? "p-7 sm:p-9" : "p-7 sm:p-8"} flex flex-col flex-1`}>
+      <div className={`relative ${isPopular ? "p-8 sm:p-10" : "p-8 sm:p-9"} flex flex-col flex-1`}>
         <div className={`mb-5 ${isPopular ? "mt-2" : ""}`}>
           <h3
             className={`text-xl sm:text-2xl font-bold mb-3 ${
@@ -74,44 +74,21 @@ export function PricingCard({ tier }: PricingCardProps) {
         <div className="flex-1 space-y-5">
           <div className="pricing-amount">
             <p
-              className={`text-xs font-medium mb-1 ${
-                isPopular ? "text-white" : "text-muted-foreground"
+              className={`text-xs font-medium mb-3 ${
+                isPopular ? "text-white/90" : "text-muted-foreground"
               }`}
             >
-              Valor Total
+              Valor Parcelado em {tier.installments}x
             </p>
             <p
-              className={`text-xl sm:text-2xl lg:text-3xl font-black ${
-                isPopular ? "text-white" : "text-[var(--primary)]"
-              }`}
-            >
-              {formatCurrency(tier.totalPrice)}
-            </p>
-          </div>
-
-          <div
-            className={`rounded-lg p-4 ${
-              isPopular
-                ? "bg-white/20 border border-white/30 backdrop-blur-sm"
-                : "bg-[var(--muted)]"
-            }`}
-          >
-            <p
-              className={`text-xs font-medium mb-2 ${
-                isPopular ? "text-white" : "text-muted-foreground"
-              }`}
-            >
-              Parcelado em {tier.installments}x
-            </p>
-            <p
-              className={`text-lg sm:text-xl font-bold break-words ${
+              className={`text-4xl sm:text-5xl font-black mb-4 ${
                 isPopular ? "text-white" : "text-[var(--primary)]"
               }`}
             >
               {formatCurrency(tier.monthlyPrice)}
             </p>
             <p
-              className={`text-xs mt-2 ${
+              className={`text-sm mb-4 ${
                 isPopular ? "text-white/95" : "text-muted-foreground"
               }`}
             >
@@ -120,10 +97,33 @@ export function PricingCard({ tier }: PricingCardProps) {
           </div>
 
           <div
-            className={`border-t ${
+            className={`rounded-lg p-4 border ${
               isPopular
-                ? "border-white/30 pt-4"
-                : "border-[var(--border)] pt-4"
+                ? "bg-white/10 border-white/20"
+                : "bg-[var(--muted)] border-[var(--border)]"
+            }`}
+          >
+            <p
+              className={`text-xs font-medium mb-1 ${
+                isPopular ? "text-white/80" : "text-muted-foreground"
+              }`}
+            >
+              Valor Total
+            </p>
+            <p
+              className={`text-lg sm:text-xl font-bold break-words ${
+                isPopular ? "text-white" : "text-[var(--primary)]"
+              }`}
+            >
+              {formatCurrency(tier.totalPrice)}
+            </p>
+          </div>
+
+          <div
+            className={`border-t mt-4 pt-4 ${
+              isPopular
+                ? "border-white/20"
+                : "border-[var(--border)]"
             }`}
           >
             <div className="flex items-center justify-center gap-2">
@@ -143,16 +143,6 @@ export function PricingCard({ tier }: PricingCardProps) {
               </p>
             </div>
           </div>
-
-          <button
-            className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 mt-6 ${
-              isPopular
-                ? "bg-[var(--blue-detail)] text-white hover:bg-blue-700 shadow-lg hover:shadow-xl hover:scale-105"
-                : "bg-[var(--primary)] text-white hover:bg-[var(--burnt-orange)] shadow-md hover:shadow-lg"
-            }`}
-          >
-            Escolher Plano
-          </button>
         </div>
       </div>
     </Card>

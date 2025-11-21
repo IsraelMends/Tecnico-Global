@@ -52,7 +52,7 @@ export function PricingCard({ tier }: PricingCardProps) {
         }`}
       />
 
-      <div className={`relative ${isPopular ? "p-6 sm:p-8" : "p-6 sm:p-7"} flex flex-col flex-1`}>
+      <div className={`relative ${isPopular ? "p-7 sm:p-9" : "p-7 sm:p-8"} flex flex-col flex-1`}>
         <div className={`mb-6 ${isPopular ? "mt-2" : ""}`}>
           <h3
             className={`text-2xl font-bold mb-2 ${

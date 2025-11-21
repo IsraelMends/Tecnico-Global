@@ -71,7 +71,7 @@ export function PricingCard({ tier }: PricingCardProps) {
           />
         </div>
 
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-5">
           <div className="pricing-amount">
             <p
               className={`text-xs font-medium mb-2 ${

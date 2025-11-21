@@ -97,14 +97,14 @@ export function PricingCard({ tier }: PricingCardProps) {
             }`}
           >
             <p
-              className={`text-sm font-medium mb-2 ${
+              className={`text-xs font-medium mb-2 ${
                 isPopular ? "text-white" : "text-muted-foreground"
               }`}
             >
               Parcelado em {tier.installments}x
             </p>
             <p
-              className={`text-xl font-bold ${
+              className={`text-lg sm:text-xl font-bold break-words ${
                 isPopular ? "text-white" : "text-[var(--primary)]"
               }`}
             >

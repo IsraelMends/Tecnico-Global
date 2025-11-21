@@ -145,7 +145,7 @@ export function PricingCard({ tier }: PricingCardProps) {
           </div>
 
           <button
-            className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 mt-4 ${
+            className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 mt-6 ${
               isPopular
                 ? "bg-[var(--blue-detail)] text-white hover:bg-blue-700 shadow-lg hover:shadow-xl hover:scale-105"
                 : "bg-[var(--primary)] text-white hover:bg-[var(--burnt-orange)] shadow-md hover:shadow-lg"

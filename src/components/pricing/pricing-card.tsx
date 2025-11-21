@@ -18,7 +18,7 @@ export function PricingCard({ tier }: PricingCardProps) {
 
   return (
     <Card
-      className={`relative overflow-hidden rounded-2xl p-0 flex flex-col flex-1 h-full transition-all duration-300 ${
+      className={`relative overflow-hidden rounded-2xl p-0 flex flex-col h-full transition-all duration-300 ${
         isPopular
           ? "bg-gradient-to-br from-[#FF8C42] to-[#FF7620] shadow-2xl hover:shadow-3xl hover:scale-105 border-2 border-[var(--amber)]"
           : "bg-card shadow-sm hover:shadow-xl border border-[var(--border)] hover:-translate-y-2"
@@ -35,7 +35,7 @@ export function PricingCard({ tier }: PricingCardProps) {
 
       {/* popular badge */}
       {isPopular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-10">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--blue-detail)] text-white px-3 py-1 text-xs font-bold shadow-lg">
             ⭐ Mais Popular
           </span>
@@ -74,7 +74,7 @@ export function PricingCard({ tier }: PricingCardProps) {
         <div className="flex-1 space-y-5">
           <div className="pricing-amount">
             <p
-              className={`text-xs font-medium mb-3 ${
+              className={`text-2xl font-medium mb-3 ${
                 isPopular ? "text-white/90" : "text-muted-foreground"
               }`}
             >

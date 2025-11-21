@@ -75,7 +75,7 @@ export function PricingCard({ tier }: PricingCardProps) {
           <div className="pricing-amount">
             <p
               className={`text-2xl font-medium mb-3 ${
-                isPopular ? "text-white/90" : "text-muted-foreground"
+                isPopular ? "text-white/90 text-2xl" : "text-muted-foreground"
               }`}
             >
               Valor Parcelado em {tier.installments}x

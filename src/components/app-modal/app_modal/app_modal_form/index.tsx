@@ -119,10 +119,8 @@ export default function AppModalForm({
     try {
       await sendToApi(normalizedData);
 
-      // Record successful submission
       recordSubmission(normalizedData.email, normalizedData.phone);
 
-      // Call the submit hook from useAppModalForm
       await submit();
 
       // Redirect to thank you page

@@ -10,8 +10,8 @@ export interface LeadData {
   name: string;
   phone: string;
   email: string;
-  areaOfInterest?: string;
-  enterpriseId?: number;
+  areaOfInterest: string;
+  enterpriseId: number;
 }
 
 /**

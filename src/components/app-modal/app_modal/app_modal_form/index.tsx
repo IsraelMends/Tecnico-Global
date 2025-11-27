@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 import AppModalFormFields from "./app_modal_form_fields";
@@ -8,6 +8,11 @@ import AppModalButton from "../../app_modal_ui/app_modal_button";
 import AppModalError from "../../app_modal_ui/app_modal_error";
 import { useAppModalForm } from "../../app_modal_hooks/app_modal_use_form";
 import generateToken from "@/utils/generateToken";
+import {
+  checkDuplicateSubmission,
+  recordSubmission,
+} from "@/utils/deduplicationService";
+import { validateLead, normalizeLead } from "@/utils/validateLead";
 
 interface Props {
   onClose: () => void;
@@ -22,21 +27,14 @@ export default function AppModalForm({
   policyUrl,
   originLabel,
 }: Props) {
-  const router = useRouter(); // hook para navegação
+  const router = useRouter();
   const { fields, set, error, submitting, isValid, submit } = useAppModalForm({
     onClose,
     whatsappNumber,
     originLabel,
   });
 
-  //Defini um objeto para armazenar os dados
-  const data = {
-    name: "",
-    phone: "",
-    email: "",
-    areaOfInterest: "",
-    enterpriseId: 6,
-  };
+  const submitInProgressRef = useRef(false);
 
   const sendToApi = async (data: {
     name: string;
@@ -45,17 +43,20 @@ export default function AppModalForm({
     areaOfInterest: string;
     enterpriseId: number;
   }) => {
-    const token = await generateToken(); // ESSENCIAL
+    const token = await generateToken();
 
-    const res = await fetch("https://api.polofaculdades.com.br/leads/criar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(data),
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/leads/criar`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     const text = await res.text();
     let json: any = null;
@@ -66,35 +67,72 @@ export default function AppModalForm({
     }
 
     if (!res.ok) {
-      console.error("Erro da API:", res.status, text);
-      throw new Error(`Erro na API: ${res.status}`);
+      console.error("API Error:", res.status, text);
+      throw new Error(`API Error: ${res.status}`);
     }
 
     return json ?? text;
   };
 
-  // Função para o envio
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // monte o payload a partir dos fields
-    const payload = {
-      name: (fields.fullName || "").trim(),
-      phone: (fields.phone || "").replace(/\D/g, ""), // só dígitos
-      email: (fields.email || "").trim(),
-      areaOfInterest: "Geral".trim?.() || "Geral", // ajuste conforme seu hook
+    // Prevent double-submit
+    if (submitInProgressRef.current) {
+      return;
+    }
+
+    // Normalize the data
+    const normalizedData = normalizeLead({
+      name: fields.fullName,
+      email: fields.email,
+      phone: fields.phone,
+      areaOfInterest: "Geral",
       enterpriseId: 2,
-    };
+    });
+
+    // Validate the normalized data
+    const validationErrors = validateLead(normalizedData);
+    if (validationErrors.length > 0) {
+      const errorMessage = validationErrors
+        .map((err) => err.message)
+        .join("; ");
+      set.setError(errorMessage);
+      return;
+    }
+
+    // Check for duplicate submission in current session
+    const duplicateCheck = checkDuplicateSubmission(
+      normalizedData.email,
+      normalizedData.phone
+    );
+    if (duplicateCheck.isDuplicate) {
+      set.setError(
+        duplicateCheck.message ||
+          "Duplicate submission detected. Please try again later."
+      );
+      return;
+    }
+
+    submitInProgressRef.current = true;
 
     try {
-      await sendToApi(payload);
+      await sendToApi(normalizedData);
+
+      // Record successful submission
+      recordSubmission(normalizedData.email, normalizedData.phone);
+
+      // Call the submit hook from useAppModalForm
       await submit();
 
-      // 🚀 Redireciona para a página de agradecimento
+      // Redirect to thank you page
       router.push("/agradecimento");
-    } catch (err) {
-      console.error("Falha ao enviar lead:", err);
-      // opcional: exibir erro na UI (via estado do seu hook)
+    } catch (err: any) {
+      console.error("Lead submission failed:", err);
+      const errorMessage =
+        err?.message || "Failed to submit lead. Please try again.";
+      set.setError(errorMessage);
+      submitInProgressRef.current = false;
     }
   };
 
@@ -112,7 +150,7 @@ export default function AppModalForm({
         policyUrl={policyUrl}
       />
       {error && <AppModalError>{error}</AppModalError>}
-      <AppModalButton disabled={submitting || !isValid}>
+      <AppModalButton disabled={submitting || !isValid || submitInProgressRef.current}>
         {submitting ? "Abrindo WhatsApp..." : "Enviar para o WhatsApp"}
       </AppModalButton>
     </form>

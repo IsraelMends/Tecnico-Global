@@ -33,7 +33,7 @@ export const useAppModalForm = ({ onClose, whatsappNumber, originLabel }: Params
       window.location.href = url;
       onClose();
     } catch (e) {
-      setError("Não foi possível abrir o WhatsApp agora. Tente novamente.");
+      setError("Não foi poss��vel abrir o WhatsApp agora. Tente novamente.");
     } finally {
       setSubmitting(false);
     }
@@ -41,7 +41,7 @@ export const useAppModalForm = ({ onClose, whatsappNumber, originLabel }: Params
 
   return {
     fields: { fullName, phone, email, accepted },
-    set: { setFullName, setPhone, setEmail, setAccepted },
+    set: { setFullName, setPhone, setEmail, setAccepted, setError },
     error,
     submitting,
     isValid,

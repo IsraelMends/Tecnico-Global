@@ -32,8 +32,8 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     courseCount: 5,
-    totalPrice: 7999.90,
-    monthlyPrice: 666.67,
+    totalPrice: 6999.90,
+    monthlyPrice: 583.33,
     installments: 12,
   },
 ];

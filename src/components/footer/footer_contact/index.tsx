@@ -10,11 +10,11 @@ const FooterContact = () => {
         <li>
           <span className="sr-only">Endereço:</span>
           <a
-            href="https://maps.google.com/?q=R.%20Luiz%20Rodrigues%20dos%20Santos,%2044%20-%20Todos%20Os%20Santos,%20Cel.%20Fabriciano"
+            href="https://maps.app.goo.gl/CXmE9HqXGf22TNHd8"
             target="_blank" rel="noopener noreferrer"
             className="hover:text-[var(--amber)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--amber)] transition-colors"
           >
-            Av. ANTÔNIO VILHENA 630, 551 - LIBERDADE, MARABÁ
+            Av. ANTÔNIO VILHENA, 551 - LIBERDADE, MARABÁ
           </a>
         </li>
       </ul>
